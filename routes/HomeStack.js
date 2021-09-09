@@ -14,7 +14,7 @@ const screens = {
         header: () => {
           return (
             <Appbar.Header>
-            <Appbar.Action color="white" icon="thermometer" />
+            <Appbar.Action color="white" icon="thermometer"/>
             <Appbar.Content title="Weather Forecast"/>
             <Appbar.Action icon="plus" onPress={() => navigation.navigate('NewCity')} />
             </Appbar.Header>
@@ -34,7 +34,7 @@ const screens = {
             <Appbar.Content title="5 day forecast"/>
             <Appbar.Action icon="delete" 
               onPress={ () => {
-                // delete stuff
+                  // delete stuff
                   navigation.navigate('Home');
                 }
               } />
