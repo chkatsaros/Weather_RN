@@ -9,19 +9,6 @@ import { Appbar } from 'react-native-paper';
 const screens = {
   Home: {
     screen: Home,
-    navigationOptions: ({navigation}) => {
-      return {
-        header: () => {
-          return (
-            <Appbar.Header>
-            <Appbar.Action color="white" icon="thermometer"/>
-            <Appbar.Content title="Weather Forecast"/>
-            <Appbar.Action icon="plus" onPress={() => navigation.navigate('NewCity')} />
-            </Appbar.Header>
-          );
-        }
-      }
-    }
   },
   CityDetails: {
     screen: CityDetails,
@@ -53,7 +40,10 @@ const screens = {
             <Appbar.Header>
             <Appbar.BackAction onPress={() => navigation.navigate('Home')} />
             <Appbar.Content title="Add new city"/>
-            <Appbar.Action icon="check" onPress={() => navigation.navigate('NewCity')} />
+            <Appbar.Action icon="check" onPress={() => {
+              //add stuff
+              navigation.navigate('Home')}
+             } />
             </Appbar.Header>
           );
         }

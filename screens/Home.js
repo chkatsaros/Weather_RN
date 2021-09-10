@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useLayoutEffect } from 'react';
 import { ActivityIndicator, View, Text, Image } from 'react-native';
 import { styles } from '../styles/styles';
-import { List, Colors } from 'react-native-paper';
+import { List, Appbar } from 'react-native-paper';
 import { API_KEY } from '@env';
 import axios from 'axios';
-import { rgbToHex } from '@material-ui/core';
 
 export default function Home({ navigation }) {
 
@@ -46,9 +45,24 @@ export default function Home({ navigation }) {
                 />
               );
             })
-          }
+          } 
         </List.Section>
       )}      
     </View>
   );
 }
+
+Home.navigationOptions = ({ navigation }) => {
+  return {
+    header: () => {
+      return (
+        <Appbar.Header>
+        <Appbar.Action color="white" icon="thermometer"/>
+        <Appbar.Content title="Weather Forecast"/>
+        <Appbar.Action icon="plus" onPress={() => navigation.navigate('NewCity')} />
+        </Appbar.Header>
+      );
+    }
+  }
+}
+

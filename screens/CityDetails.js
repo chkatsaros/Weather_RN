@@ -17,7 +17,7 @@ export default function CityDetails({ navigation }) {
       <View style={{padding: 10, flexDirection: 'row', alignItems:'center', justifyContent: 'left'}}>
         <Caption style={{fontSize: 70, fontWeight: '100', width: '50%'}}>{`${Math.round(navigation.getParam('list')[0].main.temp - 273.15)}°C`}</Caption>
         <View style={{flexDirection: 'row', width: '50%', justifyContent: 'left'}}>
-          <Image style={{height: 120, width: 120,}} source={{uri: `http://openweathermap.org/img/wn/${navigation.getParam('list')[0].weather[0].icon}@4x.png`}}/>
+          <Image style={{height: 140, width: 140,}} source={{uri: `http://openweathermap.org/img/wn/${navigation.getParam('list')[0].weather[0].icon}@4x.png`}}/>
         </View>
       </View>
       <View style={{width: '100%', flexDirection: 'row'}}>
@@ -43,7 +43,6 @@ export default function CityDetails({ navigation }) {
                                       <Image style={{justifyContent: 'center', alignItems: 'center', height: 50, width: 50,}} source={{uri: `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`}}/>
                                   </View>
                                  }
-                          //  onPress={() => navigation.navigate('CityDetails', data)}
                           />
               );
             }
